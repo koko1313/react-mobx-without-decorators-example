@@ -1,8 +1,13 @@
 import React from 'react';
+import { Provider } from 'mobx-react';
+import EmployeesStore from './stores/EmployeesStore';
+import Collection from './components/Collection';
 
 function App() {
   return (
-    null
+    <Provider employees={EmployeesStore}>
+      <Collection />
+    </Provider>
   );
 }
 
