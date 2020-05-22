@@ -9,13 +9,16 @@ class Collection extends Component {
 
     renderEmployees = () => {
         return this.props.employees.all.map(employee => {
-            return <p key={employee.id}>{employee.name} {employee.salary}</p>
+            return <p key={employee.id}>{employee.name} - {employee.salary}</p>
         });
     }
 
     render() {
         return <>
             {this.renderEmployees()}
+
+            <p>Total salary: {this.props.employees.totalSalary}</p>
+
             <button onClick={this.addEmployee}>Add employee</button>
         </>;
     }
